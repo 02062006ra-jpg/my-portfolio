@@ -1,0 +1,316 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #5a4a4a;
+    background: linear-gradient(135deg, #ffe8f0 0%, #fff0f5 50%, #ffe8f0 100%);
+    min-height: 100vh;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(135deg, #ff9ec0 0%, #ff6b9c 50%, #ff4d87 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+nav a:hover {
+    color: #ff4d87;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Основной контент */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 2rem 0;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #ff4d87;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #ffb6c1;
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+/* Обо мне */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    border: 4px solid #ff4d87;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 6px solid #ff4d87;
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.25);
+}
+
+.skill-card h3 {
+    color: #ff4d87;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ffd6e0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-card li::before {
+    content: '💕';
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+}
+
+.skill-card li:last-child {
+    border-bottom: none;
+}
+
+/* Проекты */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9ec0, #ff4d87, #ff9ec0);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover::after {
+    transform: scaleX(1);
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25);
+    border-color: #ff4d87;
+}
+
+.project-card h3 {
+    color: #ff4d87;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    color: #7a6a6a;
+    line-height: 1.6;
+}
+
+/* Подвал */
+footer {
+    background: linear-gradient(135deg, #ff4d87 0%, #ff6b9c 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -4px 20px rgba(255, 105, 180, 0.3);
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav a {
+        padding: 0.8rem 1.5rem;
+        display: block;
+    }
+}
+
+/* Дополнительные элементы */
+.skill-card:nth-child(2) {
+    border-left-color: #ff9ec0;
+}
+
+.skill-card:nth-child(3) {
+    border-left-color: #ff6b9c;
+}
+
+.project-card:nth-child(2) {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+}
+
+.project-card:nth-child(3) {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffebef 100%);
+}
+
+/* Эффект неонового свечения для заголовков */
+h1, h2 {
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+/* фото */
+
+.about-content img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #ff4d87;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .about-content img {
+        max-width: 150px;
+    }
+}
